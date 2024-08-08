@@ -85,6 +85,7 @@
             MaximumSize = new Size(480, 329);
             MinimumSize = new Size(480, 329);
             Name = "EditProduct";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditProduct";
             ResumeLayout(false);
             PerformLayout();

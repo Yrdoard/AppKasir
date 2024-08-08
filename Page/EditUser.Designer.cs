@@ -132,6 +132,7 @@
             MaximumSize = new Size(480, 480);
             MinimumSize = new Size(480, 480);
             Name = "EditUser";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditUser";
             ResumeLayout(false);
             PerformLayout();

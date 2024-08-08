@@ -44,5 +44,10 @@ namespace Kasir.Page
                 this.Close();
             }
         }
+
+        private void TbStock_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

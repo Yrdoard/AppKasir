@@ -87,6 +87,7 @@
             MaximumSize = new Size(420, 400);
             MinimumSize = new Size(420, 400);
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;
             ResumeLayout(false);

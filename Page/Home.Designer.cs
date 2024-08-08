@@ -31,12 +31,11 @@
             components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
+            button11 = new Button();
             button10 = new Button();
             button9 = new Button();
-            button8 = new Button();
             label2 = new Label();
             panel1 = new Panel();
-            label3 = new Label();
             textBox2 = new TextBox();
             label1 = new Label();
             textBox3 = new TextBox();
@@ -56,7 +55,7 @@
             usernameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             passwordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             userBindingSource = new BindingSource(components);
-            textBox1 = new TextBox();
+            TbSearchUser = new TextBox();
             button3 = new Button();
             button6 = new Button();
             tabPage3 = new TabPage();
@@ -97,9 +96,9 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(button11);
             tabPage2.Controls.Add(button10);
             tabPage2.Controls.Add(button9);
-            tabPage2.Controls.Add(button8);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(panel1);
             tabPage2.Controls.Add(textBox3);
@@ -112,33 +111,37 @@
             tabPage2.Text = "Home";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button11
+            // 
+            button11.BackColor = Color.Red;
+            button11.Font = new Font("Consolas", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button11.Location = new Point(597, 6);
+            button11.Name = "button11";
+            button11.Size = new Size(94, 29);
+            button11.TabIndex = 6;
+            button11.Text = "LogOut";
+            button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
+            // 
             // button10
             // 
-            button10.Location = new Point(475, 245);
+            button10.Location = new Point(472, 255);
             button10.Name = "button10";
             button10.Size = new Size(219, 34);
             button10.TabIndex = 4;
-            button10.Text = "Buy";
+            button10.Text = "Print Struck";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button9
             // 
-            button9.Location = new Point(475, 285);
+            button9.Location = new Point(472, 295);
             button9.Name = "button9";
             button9.Size = new Size(219, 34);
             button9.TabIndex = 3;
             button9.Text = "Add Product";
             button9.UseVisualStyleBackColor = true;
             button9.Click += Add_Click;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(475, 325);
-            button8.Name = "button8";
-            button8.Size = new Size(219, 34);
-            button8.TabIndex = 2;
-            button8.Text = "Add Product";
-            button8.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -156,7 +159,6 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(472, 148);
@@ -164,37 +166,26 @@
             panel1.Size = new Size(219, 91);
             panel1.TabIndex = 1;
             // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(3, 48);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 27);
-            label3.TabIndex = 7;
-            label3.Text = "Rp.";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // textBox2
             // 
             textBox2.BackColor = Color.Silver;
             textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(57, 41);
+            textBox2.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(3, 41);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
-            textBox2.Size = new Size(159, 32);
+            textBox2.Size = new Size(213, 27);
             textBox2.TabIndex = 8;
+            textBox2.Text = "$0,00";
+            textBox2.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(19, 5);
+            label1.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(47, 0);
             label1.Name = "label1";
-            label1.Size = new Size(180, 33);
+            label1.Size = new Size(131, 23);
             label1.TabIndex = 6;
             label1.Text = "Total Price";
             // 
@@ -222,6 +213,9 @@
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.Size = new Size(469, 360);
             dataGridView3.TabIndex = 0;
+            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
+            dataGridView3.RowsAdded += DataGridView3_RowsChanged;
+            dataGridView3.RowsRemoved += DataGridView3_RowsChanged;
             // 
             // Product
             // 
@@ -249,7 +243,7 @@
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(dataGridView1);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(TbSearchUser);
             tabPage1.Controls.Add(button3);
             tabPage1.Controls.Add(button6);
             tabPage1.Location = new Point(4, 27);
@@ -284,6 +278,8 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -302,6 +298,7 @@
             // idDataGridViewTextBoxColumn1
             // 
             idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn1.FillWeight = 41.17647F;
             idDataGridViewTextBoxColumn1.HeaderText = "Id";
             idDataGridViewTextBoxColumn1.MinimumWidth = 6;
             idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
@@ -310,6 +307,7 @@
             // userTypeDataGridViewTextBoxColumn
             // 
             userTypeDataGridViewTextBoxColumn.DataPropertyName = "UserType";
+            userTypeDataGridViewTextBoxColumn.FillWeight = 109.803917F;
             userTypeDataGridViewTextBoxColumn.HeaderText = "UserType";
             userTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
             userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
@@ -318,6 +316,7 @@
             // nameDataGridViewTextBoxColumn1
             // 
             nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn1.FillWeight = 109.803917F;
             nameDataGridViewTextBoxColumn1.HeaderText = "Name";
             nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
             nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
@@ -326,6 +325,7 @@
             // addressDataGridViewTextBoxColumn
             // 
             addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            addressDataGridViewTextBoxColumn.FillWeight = 109.803917F;
             addressDataGridViewTextBoxColumn.HeaderText = "Address";
             addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
@@ -334,6 +334,7 @@
             // phoneNumberDataGridViewTextBoxColumn
             // 
             phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            phoneNumberDataGridViewTextBoxColumn.FillWeight = 109.803917F;
             phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
@@ -342,6 +343,7 @@
             // usernameDataGridViewTextBoxColumn
             // 
             usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            usernameDataGridViewTextBoxColumn.FillWeight = 109.803917F;
             usernameDataGridViewTextBoxColumn.HeaderText = "Username";
             usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
             usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
@@ -350,6 +352,7 @@
             // passwordDataGridViewTextBoxColumn
             // 
             passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            passwordDataGridViewTextBoxColumn.FillWeight = 109.803917F;
             passwordDataGridViewTextBoxColumn.HeaderText = "Password";
             passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
             passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
@@ -359,12 +362,12 @@
             // 
             userBindingSource.DataSource = typeof(Models.User);
             // 
-            // textBox1
+            // TbSearchUser
             // 
-            textBox1.Location = new Point(475, 7);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 25);
-            textBox1.TabIndex = 15;
+            TbSearchUser.Location = new Point(475, 7);
+            TbSearchUser.Name = "TbSearchUser";
+            TbSearchUser.Size = new Size(125, 25);
+            TbSearchUser.TabIndex = 15;
             // 
             // button3
             // 
@@ -374,6 +377,7 @@
             button3.TabIndex = 14;
             button3.Text = "Search";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += UserSearch_Click;
             // 
             // button6
             // 
@@ -393,10 +397,10 @@
             tabPage3.Controls.Add(TbSearch);
             tabPage3.Controls.Add(BtnSearch);
             tabPage3.Controls.Add(button7);
-            tabPage3.Location = new Point(4, 27);
+            tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(694, 359);
+            tabPage3.Size = new Size(694, 357);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "Product";
             tabPage3.UseVisualStyleBackColor = true;
@@ -425,6 +429,8 @@
             // 
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.AllowUserToResizeColumns = false;
+            dataGridView2.AllowUserToResizeRows = false;
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -518,6 +524,7 @@
             MaximumSize = new Size(720, 437);
             MinimumSize = new Size(720, 437);
             Name = "Home";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
             Load += Home_Load;
             tabControl1.ResumeLayout(false);
@@ -551,23 +558,27 @@
         private TabPage tabPage2;
         private Button button1;
         private Button button2;
-        private TextBox textBox1;
+        private TextBox TbSearchUser;
         private Button button3;
         private Button button6;
         private DataGridView dataGridView1;
-        private DataGridView dataGridView3;
+        public DataGridView dataGridView3;
         private Panel panel1;
         private DataGridViewTextBoxColumn Product;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Price;
-        private Button button8;
         private Label label2;
         private Button button10;
         private Button button9;
         private TextBox textBox3;
         private Label label1;
-        private Label label3;
         private TextBox textBox2;
+        private BindingSource userBindingSource;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private BindingSource productBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn userTypeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
@@ -575,11 +586,6 @@
         private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private BindingSource userBindingSource;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
-        private BindingSource productBindingSource;
+        private Button button11;
     }
 }

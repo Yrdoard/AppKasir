@@ -37,25 +37,26 @@
             // TbName
             // 
             TbName.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TbName.Location = new Point(36, 37);
+            TbName.Location = new Point(45, 38);
             TbName.Name = "TbName";
-            TbName.PlaceholderText = "Name";
+            TbName.PlaceholderText = "Name Product";
             TbName.Size = new Size(361, 39);
             TbName.TabIndex = 0;
             // 
             // TbStock
             // 
             TbStock.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TbStock.Location = new Point(36, 89);
+            TbStock.Location = new Point(45, 90);
             TbStock.Name = "TbStock";
             TbStock.PlaceholderText = "Stock";
             TbStock.Size = new Size(361, 39);
             TbStock.TabIndex = 1;
+            TbStock.TextChanged += TbStock_TextChanged;
             // 
             // TbPrice
             // 
             TbPrice.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TbPrice.Location = new Point(36, 140);
+            TbPrice.Location = new Point(45, 141);
             TbPrice.Name = "TbPrice";
             TbPrice.PlaceholderText = "Price";
             TbPrice.Size = new Size(361, 39);
@@ -63,7 +64,7 @@
             // 
             // AddBtn
             // 
-            AddBtn.Location = new Point(287, 212);
+            AddBtn.Location = new Point(296, 213);
             AddBtn.Name = "AddBtn";
             AddBtn.Size = new Size(110, 35);
             AddBtn.TabIndex = 4;
@@ -84,6 +85,7 @@
             MaximumSize = new Size(480, 329);
             MinimumSize = new Size(480, 329);
             Name = "AddProduct";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddProduct";
             ResumeLayout(false);
             PerformLayout();

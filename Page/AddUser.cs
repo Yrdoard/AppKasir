@@ -26,22 +26,28 @@ namespace Kasir.Page
         {
             Models.User user = new Models.User
             {
-            Name = TbName.Text,
-            UserType = comboBox1.Text,
-            Address = TbAddress.Text,
-            PhoneNumber = TbPhoneNumber.Text,
-            Username = TbUsername.Text,
-            Password = TbPassword.Text,
+                Name = TbName.Text,
+                UserType = comboBox1.Text,
+                Address = TbAddress.Text,
+                PhoneNumber = TbPhoneNumber.Text,
+                Username = TbUsername.Text,
+                Password = TbPassword.Text,
             };
-
-            DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if (string.IsNullOrEmpty(TbName.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(TbAddress.Text) || string.IsNullOrEmpty(TbPassword.Text) || string.IsNullOrEmpty(TbPhoneNumber.Text) || string.IsNullOrEmpty(TbUsername.Text)){
+                MessageBox.Show("Please enter valid user details.");
+                return;
+            }
+            else
             {
-                Program.db.Users.Add(user);
-                Program.db.SaveChanges();
-                homeForm.RDataUser();
-                this.Close();
+                DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    Program.db.Users.Add(user);
+                    Program.db.SaveChanges();
+                    homeForm.RDataUser();
+                    this.Close();
+                }
             }
         }
 

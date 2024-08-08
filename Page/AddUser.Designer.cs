@@ -134,6 +134,7 @@
             MaximumSize = new Size(480, 480);
             MinimumSize = new Size(480, 480);
             Name = "AddUser";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddUser";
             ResumeLayout(false);
             PerformLayout();

@@ -21,20 +21,36 @@ namespace Kasir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User user = Program.db.Users.FirstOrDefault(value => value.Username == TbUsername.Text && value.Password == TbPassword.Text);
-            if (user == null)
+            User? user = Program.db.Users.FirstOrDefault(value => value.Username == TbUsername.Text && value.Password == TbPassword.Text);
+            if (TbUsername.Text.Length == 0 || TbPassword.Text.Length == 0)
             {
-                MessageBox.Show("Username atau password salah");
+                MessageBox.Show("Username & Password undefined");
                 return;
             }
-            if (user.UserType == "Admin")
+
+            if (user == null)
             {
-                new Home().Show();
-                Hide();
+                MessageBox.Show("Username & Password is null");
+                return;
             }
-            else
+
+            switch (user.UserType)
             {
-                MessageBox.Show("Anda tidak memiliki akses");
+                case "Admin":
+                    Home home = new Home(user);
+                    home.Show();
+                    this.Hide();
+                    break;
+
+                case "Staff":
+                    Home homeStaff = new Home(user);
+                    homeStaff.Show();
+                    this.Hide();
+                    break;
+
+                default:
+                    MessageBox.Show("User Type not defined");
+                    break;
             }
         }
 

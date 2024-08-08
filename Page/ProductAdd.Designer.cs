@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             AddBtn = new Button();
-            TbPrice = new TextBox();
-            TbStock = new TextBox();
+            TbQuantity = new TextBox();
             TbName = new TextBox();
             SuspendLayout();
             // 
@@ -40,32 +39,23 @@
             AddBtn.Name = "AddBtn";
             AddBtn.Size = new Size(110, 35);
             AddBtn.TabIndex = 8;
-            AddBtn.Text = "Add Product";
+            AddBtn.Text = "Add";
             AddBtn.UseVisualStyleBackColor = true;
             AddBtn.Click += AddBtn_Click;
             // 
-            // TbPrice
+            // TbQuantity
             // 
-            TbPrice.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TbPrice.Location = new Point(51, 139);
-            TbPrice.Name = "TbPrice";
-            TbPrice.PlaceholderText = "Price";
-            TbPrice.Size = new Size(361, 39);
-            TbPrice.TabIndex = 7;
-            // 
-            // TbStock
-            // 
-            TbStock.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TbStock.Location = new Point(51, 88);
-            TbStock.Name = "TbStock";
-            TbStock.PlaceholderText = "Stock";
-            TbStock.Size = new Size(361, 39);
-            TbStock.TabIndex = 6;
+            TbQuantity.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TbQuantity.Location = new Point(51, 131);
+            TbQuantity.Name = "TbQuantity";
+            TbQuantity.PlaceholderText = "Quantity";
+            TbQuantity.Size = new Size(361, 39);
+            TbQuantity.TabIndex = 6;
             // 
             // TbName
             // 
             TbName.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TbName.Location = new Point(51, 36);
+            TbName.Location = new Point(51, 79);
             TbName.Name = "TbName";
             TbName.PlaceholderText = "Name";
             TbName.Size = new Size(361, 39);
@@ -77,8 +67,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(462, 282);
             Controls.Add(AddBtn);
-            Controls.Add(TbPrice);
-            Controls.Add(TbStock);
+            Controls.Add(TbQuantity);
             Controls.Add(TbName);
             MaximumSize = new Size(480, 329);
             MinimumSize = new Size(480, 329);
@@ -91,8 +80,7 @@
         #endregion
 
         private Button AddBtn;
-        private TextBox TbPrice;
-        private TextBox TbStock;
+        private TextBox TbQuantity;
         private TextBox TbName;
     }
 }
