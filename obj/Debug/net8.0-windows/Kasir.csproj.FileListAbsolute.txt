@@ -98,3 +98,9 @@ C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.genruntimeconfig
 C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\ref\Kasir.dll
 C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Login.resources
 C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.Home.resources
+C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.sourcelink.json
+C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.AddProduct.resources
+C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.EditProduct.resources
+C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.ProductAdd.resources
+C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.AddUser.resources
+C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.EditUser.resources

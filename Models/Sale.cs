@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Kasir.Models
 {
-    internal class Sale
+    public class Sale
     {
         public int Id { get; set; }
         public DateTime SaleDate { get; set; }

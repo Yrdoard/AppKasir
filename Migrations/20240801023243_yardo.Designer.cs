@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Kasir.Migrations
 {
     [DbContext(typeof(Database))]
-    [Migration("20240730033155_DbKasir")]
-    partial class DbKasir
+    [Migration("20240801023243_yardo")]
+    partial class yardo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

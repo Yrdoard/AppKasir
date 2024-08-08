@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Kasir.Models
 {
-    internal class User
+    public class User
     {
         public int Id { get; set; }
         public string UserType { get; set; }

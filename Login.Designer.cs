@@ -51,7 +51,7 @@
             TbUsername.Location = new Point(48, 103);
             TbUsername.Name = "TbUsername";
             TbUsername.PlaceholderText = "Username";
-            TbUsername.Size = new Size(305, 43);
+            TbUsername.Size = new Size(307, 43);
             TbUsername.TabIndex = 1;
             // 
             // TbPassword
@@ -79,11 +79,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(400, 360);
+            ClientSize = new Size(402, 353);
             Controls.Add(button1);
             Controls.Add(TbPassword);
             Controls.Add(TbUsername);
             Controls.Add(label1);
+            MaximumSize = new Size(420, 400);
+            MinimumSize = new Size(420, 400);
             Name = "Login";
             Text = "Login";
             Load += Login_Load;

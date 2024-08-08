@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Kasir.Migrations
 {
     /// <inheritdoc />
-    public partial class DbKasir : Migration
+    public partial class yardo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
