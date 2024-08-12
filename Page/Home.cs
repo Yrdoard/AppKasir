@@ -186,7 +186,40 @@ namespace Kasir.Page
 
         private void button10_Click(object sender, EventArgs e)
         {
-            dataGridView3.Rows.Clear();
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                if (row.Cells[0].Value != null && row.Cells[1].Value != null)
+                {
+                    string productName = row.Cells[0].Value.ToString();
+                    if (int.TryParse(row.Cells[1].Value.ToString(), out int quantity))
+                    {
+                        Product product = Program.db.Products.FirstOrDefault(p => p.Name == productName);
+
+                        if (product != null)
+                        {
+                            product.Stock -= quantity; // Mengurangi stok produk sesuai quantity
+                            if (product.Stock < 0)
+                            {
+                                product.Stock = 0; // Pastikan stok tidak negatif
+                            }
+                        }
+                        else
+                        {
+                            // Handle the case where the product is not found
+                            MessageBox.Show("Product not found: " + productName);
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where the quantity is not a valid integer
+                        MessageBox.Show("Invalid quantity for product: " + productName);
+                    }
+                }
+            }
+
+            Program.db.SaveChanges(); // Simpan perubahan ke database
+            RDataProduct(); // Perbarui tampilan data produk
+            dataGridView3.Rows.Clear(); // Bersihkan dataGridView3
         }
 
         private void DataGridView3_RowsChanged(object sender, DataGridViewRowsAddedEventArgs e)
@@ -224,6 +257,11 @@ namespace Kasir.Page
             Login logOut = new Login();
             logOut.Show();
             Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

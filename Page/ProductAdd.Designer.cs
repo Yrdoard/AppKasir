@@ -72,6 +72,7 @@
             MaximumSize = new Size(480, 329);
             MinimumSize = new Size(480, 329);
             Name = "ProductAdd";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ProductAdd";
             ResumeLayout(false);
             PerformLayout();
