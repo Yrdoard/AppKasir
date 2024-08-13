@@ -14,14 +14,17 @@ namespace Kasir.Page
 {
     public partial class Home : Form
     {
+        public decimal totalPrice = 0;
         private User loggedInUser;
+        private Login login;
         private Product selectedProduct;
         private User selectedUser;
         private DataGridViewRow selectedRow;
-        public Home(User user)
+        public Home(User user, Login _login)
         {
             InitializeComponent();
             loggedInUser = user;
+            login = _login;
             RDataProduct();
             RDataUser();
             if (loggedInUser.UserType != "Admin")
@@ -78,11 +81,6 @@ namespace Kasir.Page
             }
         }
 
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void DeleteProduct_Click(object sender, EventArgs e)
         {
             if (selectedProduct != null)
@@ -100,11 +98,6 @@ namespace Kasir.Page
             {
                 MessageBox.Show("Please select a product to delete.");
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ProductSearch_Click(object sender, EventArgs e)
@@ -234,34 +227,25 @@ namespace Kasir.Page
 
         private void UpdateTotalPrice()
         {
-            decimal totalPrice = 0;
-
             foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 if (row.Cells[2].Value != null)
                 {
                     totalPrice += Convert.ToDecimal(row.Cells[2].Value);
                 }
+                textBox2.Text = totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
             }
-
-            textBox2.Text = totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void button11_Click(object sender, EventArgs e)
-        {
-            Login logOut = new Login();
-            logOut.Show();
+        { 
+            login.Show();
             Close();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+           login.Show();
         }
     }
 }

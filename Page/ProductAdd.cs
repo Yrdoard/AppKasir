@@ -17,6 +17,7 @@ namespace Kasir.Page
         {
             InitializeComponent();
             homeForm = home;
+            SetupAutoCompleteForProductSearch();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -48,6 +49,16 @@ namespace Kasir.Page
             {
                 MessageBox.Show("Product not found.");
             }
+        }
+        private void SetupAutoCompleteForProductSearch()
+        {
+            var productNames = Program.db.Products.Select(p => p.Name).ToArray();
+            var autoCompleteSource = new AutoCompleteStringCollection();
+            autoCompleteSource.AddRange(productNames);
+
+            TbName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            TbName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            TbName.AutoCompleteCustomSource = autoCompleteSource;
         }
     }
 }

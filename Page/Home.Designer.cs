@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
             button11 = new Button();
@@ -65,6 +66,7 @@
             button3 = new Button();
             button6 = new Button();
             tabPage3 = new TabPage();
+            label4 = new Label();
             button4 = new Button();
             button5 = new Button();
             dataGridView2 = new DataGridView();
@@ -132,9 +134,9 @@
             // 
             // button10
             // 
-            button10.Location = new Point(651, 385);
+            button10.Location = new Point(742, 450);
             button10.Name = "button10";
-            button10.Size = new Size(219, 34);
+            button10.Size = new Size(176, 34);
             button10.TabIndex = 4;
             button10.Text = "Print Struck";
             button10.UseVisualStyleBackColor = true;
@@ -142,11 +144,11 @@
             // 
             // button9
             // 
-            button9.Location = new Point(651, 425);
+            button9.Location = new Point(744, 410);
             button9.Name = "button9";
-            button9.Size = new Size(219, 34);
+            button9.Size = new Size(176, 34);
             button9.TabIndex = 3;
-            button9.Text = "Search Product";
+            button9.Text = "Select Product";
             button9.UseVisualStyleBackColor = true;
             button9.Click += Add_Click;
             // 
@@ -155,12 +157,12 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Consolas", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(628, 280);
             label2.Name = "label2";
-            label2.Size = new Size(51, 27);
+            label2.Size = new Size(25, 27);
             label2.TabIndex = 2;
-            label2.Text = "Rp.";
+            label2.Text = "$";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -183,7 +185,7 @@
             textBox2.ReadOnly = true;
             textBox2.Size = new Size(263, 39);
             textBox2.TabIndex = 8;
-            textBox2.Text = "$0,00";
+            textBox2.Text = "$0.00";
             textBox2.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
@@ -199,10 +201,10 @@
             // textBox3
             // 
             textBox3.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(675, 273);
+            textBox3.Location = new Point(652, 273);
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "Nominal";
-            textBox3.Size = new Size(216, 39);
+            textBox3.Size = new Size(239, 39);
             textBox3.TabIndex = 5;
             // 
             // dataGridView3
@@ -222,7 +224,6 @@
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.Size = new Size(593, 498);
             dataGridView3.TabIndex = 0;
-            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
             dataGridView3.RowsAdded += DataGridView3_RowsChanged;
             dataGridView3.RowsRemoved += DataGridView3_RowsChanged;
             // 
@@ -242,6 +243,9 @@
             // 
             // Price
             // 
+            dataGridViewCellStyle1.Format = "$.";
+            dataGridViewCellStyle1.NullValue = null;
+            Price.DefaultCellStyle = dataGridViewCellStyle1;
             Price.HeaderText = "Price";
             Price.MinimumWidth = 6;
             Price.Name = "Price";
@@ -275,7 +279,6 @@
             label3.Size = new Size(216, 18);
             label3.TabIndex = 19;
             label3.Text = "*click user to edit/delete";
-            label3.Click += label3_Click;
             // 
             // button1
             // 
@@ -414,6 +417,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(label4);
             tabPage3.Controls.Add(button4);
             tabPage3.Controls.Add(button5);
             tabPage3.Controls.Add(dataGridView2);
@@ -429,11 +433,22 @@
             tabPage3.Text = "Product";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Consolas", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.IndianRed;
+            label4.Location = new Point(11, 16);
+            label4.Name = "label4";
+            label4.Size = new Size(240, 18);
+            label4.TabIndex = 20;
+            label4.Text = "*click product to edit/delete";
+            // 
             // button4
             // 
-            button4.Location = new Point(160, 9);
+            button4.Location = new Point(239, 37);
             button4.Name = "button4";
-            button4.Size = new Size(70, 22);
+            button4.Size = new Size(109, 33);
             button4.TabIndex = 12;
             button4.Text = "Delete";
             button4.UseVisualStyleBackColor = true;
@@ -441,9 +456,9 @@
             // 
             // button5
             // 
-            button5.Location = new Point(84, 9);
+            button5.Location = new Point(124, 37);
             button5.Name = "button5";
-            button5.Size = new Size(70, 22);
+            button5.Size = new Size(109, 33);
             button5.TabIndex = 11;
             button5.Text = "Edit";
             button5.UseVisualStyleBackColor = true;
@@ -457,32 +472,32 @@
             dataGridView2.AllowUserToResizeRows = false;
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, priceDataGridViewTextBoxColumn, stockDataGridViewTextBoxColumn });
             dataGridView2.DataSource = productBindingSource;
-            dataGridView2.Location = new Point(8, 108);
+            dataGridView2.Location = new Point(6, 79);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(910, 387);
+            dataGridView2.Size = new Size(914, 414);
             dataGridView2.TabIndex = 10;
             dataGridView2.CellClick += DataGridView2_CellClick;
             // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            dataGridViewCellStyle7.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             idDataGridViewTextBoxColumn.FillWeight = 23.5294113F;
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MaxInputLength = 40000;
@@ -493,8 +508,8 @@
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            dataGridViewCellStyle8.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             nameDataGridViewTextBoxColumn.FillWeight = 125.4902F;
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
             nameDataGridViewTextBoxColumn.MinimumWidth = 6;
@@ -504,8 +519,10 @@
             // priceDataGridViewTextBoxColumn
             // 
             priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            dataGridViewCellStyle9.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.Format = "$.";
+            dataGridViewCellStyle5.NullValue = null;
+            priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             priceDataGridViewTextBoxColumn.FillWeight = 125.4902F;
             priceDataGridViewTextBoxColumn.HeaderText = "Price";
             priceDataGridViewTextBoxColumn.MinimumWidth = 6;
@@ -515,8 +532,8 @@
             // stockDataGridViewTextBoxColumn
             // 
             stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            dataGridViewCellStyle10.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            stockDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            stockDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             stockDataGridViewTextBoxColumn.FillWeight = 125.4902F;
             stockDataGridViewTextBoxColumn.HeaderText = "Stock";
             stockDataGridViewTextBoxColumn.MinimumWidth = 6;
@@ -529,16 +546,16 @@
             // 
             // TbSearch
             // 
-            TbSearch.Location = new Point(475, 7);
+            TbSearch.Location = new Point(608, 39);
             TbSearch.Name = "TbSearch";
-            TbSearch.Size = new Size(125, 31);
+            TbSearch.Size = new Size(195, 31);
             TbSearch.TabIndex = 9;
             // 
             // BtnSearch
             // 
-            BtnSearch.Location = new Point(606, 9);
+            BtnSearch.Location = new Point(809, 37);
             BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(80, 22);
+            BtnSearch.Size = new Size(109, 33);
             BtnSearch.TabIndex = 8;
             BtnSearch.Text = "Search";
             BtnSearch.UseVisualStyleBackColor = true;
@@ -546,9 +563,9 @@
             // 
             // button7
             // 
-            button7.Location = new Point(8, 9);
+            button7.Location = new Point(11, 37);
             button7.Name = "button7";
-            button7.Size = new Size(70, 22);
+            button7.Size = new Size(109, 33);
             button7.TabIndex = 7;
             button7.Text = "Add";
             button7.UseVisualStyleBackColor = true;
@@ -566,7 +583,7 @@
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
-            Load += Home_Load;
+            FormClosed += Home_FormClosed;
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -604,9 +621,6 @@
         private DataGridView dataGridView1;
         public DataGridView dataGridView3;
         private Panel panel1;
-        private DataGridViewTextBoxColumn Product;
-        private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn Price;
         private Label label2;
         private Button button10;
         private Button button9;
@@ -623,10 +637,14 @@
         private DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private Button button11;
+        private Label label3;
+        private Label label4;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
-        private Label label3;
+        private DataGridViewTextBoxColumn Product;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Price;
     }
 }

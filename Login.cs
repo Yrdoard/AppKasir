@@ -37,13 +37,13 @@ namespace Kasir
             switch (user.UserType)
             {
                 case "Admin":
-                    Home home = new Home(user);
+                    Home home = new Home(user, this);
                     home.Show();
                     this.Hide();
                     break;
 
                 case "Staff":
-                    Home homeStaff = new Home(user);
+                    Home homeStaff = new Home(user, this);
                     homeStaff.Show();
                     this.Hide();
                     break;

@@ -44,10 +44,13 @@ namespace Kasir.Page
                 this.Close();
             }
         }
-
-        private void TbStock_TextChanged(object sender, EventArgs e)
+        private void Tb_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
+
 }
