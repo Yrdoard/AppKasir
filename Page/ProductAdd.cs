@@ -35,9 +35,30 @@ namespace Kasir.Page
 
             if (product != null)
             {
-                if (product.Stock >= quantity)
+                int totalQuantityInGrid = 0;
+                DataGridViewRow existingRow = null;
+
+                foreach (DataGridViewRow row in homeForm.dataGridView3.Rows)
                 {
-                    homeForm.dataGridView3.Rows.Add(product.Name, quantity, product.Price * quantity);
+                    if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().ToLower() == productName)
+                    {
+                        totalQuantityInGrid += Convert.ToInt32(row.Cells[1].Value);
+                        existingRow = row;
+                    }
+                }
+
+                if (product.Stock >= totalQuantityInGrid + quantity)
+                {
+                    if (existingRow != null)
+                    {
+                        existingRow.Cells[1].Value = totalQuantityInGrid + quantity;
+                        existingRow.Cells[2].Value = product.Price * (totalQuantityInGrid + quantity);
+                    }
+                    else
+                    {
+                        homeForm.dataGridView3.Rows.Add(product.Name, quantity, product.Price * quantity);
+                    }
+                    homeForm.UpdateTotalPrice();
                     Close();
                 }
                 else
@@ -50,6 +71,8 @@ namespace Kasir.Page
                 MessageBox.Show("Product not found.");
             }
         }
+
+
         private void SetupAutoCompleteForProductSearch()
         {
             var productNames = Program.db.Products.Select(p => p.Name).ToArray();

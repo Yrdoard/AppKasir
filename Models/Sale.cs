@@ -12,7 +12,7 @@ namespace Kasir.Models
         public int Id { get; set; }
         public DateTime SaleDate { get; set; }
         public decimal TotalPrice { get; set; }
-        public Costumer Costumer { get; set; }
+        public Costumer? Costumer { get; set; }
 
         public static void CreateModel(ModelBuilder model)
         {

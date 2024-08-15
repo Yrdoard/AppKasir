@@ -22,5 +22,8 @@
     <Compile Update="Page\ProductAdd.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Page\ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

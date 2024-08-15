@@ -35,23 +35,30 @@ namespace Kasir.Page
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if (string.IsNullOrEmpty(TbName.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(TbAddress.Text) || string.IsNullOrEmpty(TbPassword.Text) || string.IsNullOrEmpty(TbPhoneNumber.Text) || string.IsNullOrEmpty(TbUsername.Text))
             {
-                user.Name = TbName.Text;
-                user.UserType = comboBox1.Text;
-                user.Address = TbAddress.Text;
-                user.PhoneNumber = TbPhoneNumber.Text;
-                user.Username = TbUsername.Text;
-                user.Password = TbPassword.Text;
-                
+                MessageBox.Show("Please enter valid user details.");
+                return;
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
 
-                Program.db.Update(user);
-                Program.db.SaveChanges();
-                homeForm.RDataUser();
-                this.Close();
+                if (result == DialogResult.Yes)
+                {
+                    user.Name = TbName.Text;
+                    user.UserType = comboBox1.Text;
+                    user.Address = TbAddress.Text;
+                    user.PhoneNumber = TbPhoneNumber.Text;
+                    user.Username = TbUsername.Text;
+                    user.Password = TbPassword.Text;
+
+
+                    Program.db.Update(user);
+                    Program.db.SaveChanges();
+                    homeForm.RDataUser();
+                    this.Close();
+                }
             }
         }
     }

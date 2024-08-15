@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Kasir.Models;
 
 namespace Kasir.Page
@@ -25,11 +26,16 @@ namespace Kasir.Page
             InitializeComponent();
             loggedInUser = user;
             login = _login;
+            RDataSale();
             RDataProduct();
             RDataUser();
             if (loggedInUser.UserType != "Admin")
             {
                 tabControl1.TabPages.Remove(tabPage1);
+                button4.Visible = false;
+                button5.Visible = false;
+                button7.Visible = false;
+                label4.Visible = false;
             }
         }
 
@@ -42,6 +48,18 @@ namespace Kasir.Page
         {
             userBindingSource.DataSource = Program.db.Users.ToList();
         }
+
+        public void RDataSale()
+        {
+            dataGridView4.DataSource = Program.db.Sales.Select(x => new
+            {
+                Id = x.Id,
+                SaleDate = x.SaleDate,
+                TotalPrice = x.TotalPrice,
+                Costumer = x.Costumer.Name
+            }).ToList();
+        }
+
 
         private void AddProduct_Click(object sender, EventArgs e)
         {
@@ -116,7 +134,7 @@ namespace Kasir.Page
             }
         }
 
-        private void Add_Click(object sender, EventArgs e)
+        private void BtnAddProduct_Click(object sender, EventArgs e)
         {
             ProductAdd productAdd = new ProductAdd(this);
             productAdd.ShowDialog();
@@ -177,8 +195,42 @@ namespace Kasir.Page
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void BtnPrint_Click(object sender, EventArgs e)
         {
+            Costumer? costumer = null;
+            decimal discount = 0;
+
+            if (!string.IsNullOrEmpty(TbMember.Text))
+            {
+                string phoneNumber = TbMember.Text;
+
+                costumer = Program.db.Costumers.FirstOrDefault(c => c.PhoneNumber == phoneNumber);
+
+                if (costumer == null)
+                {
+                    MessageBox.Show("Member not found.");
+                    return;
+                }
+                else
+                {
+                    // Apply 10% discount if member is found
+                    discount = 0.10m;
+                }
+            }
+
+            if (dataGridView3.Rows.Count == 0)
+            {
+                MessageBox.Show("Please add products to the cart first.");
+                return;
+            }
+
+            Sale sale = new Sale
+            {
+                SaleDate = DateTime.Now,
+                TotalPrice = totalPrice,
+                Costumer = costumer
+            };
+
             foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 if (row.Cells[0].Value != null && row.Cells[1].Value != null)
@@ -190,62 +242,96 @@ namespace Kasir.Page
 
                         if (product != null)
                         {
-                            product.Stock -= quantity; // Mengurangi stok produk sesuai quantity
+                            product.Stock -= quantity;
                             if (product.Stock < 0)
                             {
-                                product.Stock = 0; // Pastikan stok tidak negatif
+                                product.Stock = 0;
                             }
+
+                            SaleDetail saleDetail = new SaleDetail
+                            {
+                                Sale = sale,
+                                Productid = product,
+                                Quantity = quantity,
+                                SubTotalPrice = product.Price,
+                                User = loggedInUser
+                            };
+
+                            Program.db.SaleDetails.Add(saleDetail);
                         }
                         else
                         {
-                            // Handle the case where the product is not found
                             MessageBox.Show("Product not found: " + productName);
                         }
                     }
                     else
                     {
-                        // Handle the case where the quantity is not a valid integer
                         MessageBox.Show("Invalid quantity for product: " + productName);
                     }
                 }
             }
 
-            Program.db.SaveChanges(); // Simpan perubahan ke database
-            RDataProduct(); // Perbarui tampilan data produk
-            dataGridView3.Rows.Clear(); // Bersihkan dataGridView3
-        }
+            if (decimal.TryParse(textBox3.Text, out decimal amountPaid))
+            {
+                if (amountPaid < totalPrice)
+                {
+                    MessageBox.Show("The amount paid is less than the total price. Please enter a valid amount.");
+                    return;
+                }
+                decimal discountAmount = totalPrice * discount;
+                decimal change = amountPaid - discountAmount;
 
-        private void DataGridView3_RowsChanged(object sender, DataGridViewRowsAddedEventArgs e)
-        {
+                ReceiptForm receiptForm = new ReceiptForm(dataGridView3.Rows, totalPrice, amountPaid, change, discount);
+                receiptForm.ShowDialog();
+
+                dataGridView3.Rows.Clear();
+                textBox3.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Invalid amount entered. Please enter a valid number.");
+            }
+
+            Program.db.Sales.Add(sale);
+            Program.db.SaveChanges();
+            RDataProduct();
+            RDataSale();
             UpdateTotalPrice();
+            TbMember.Text = string.Empty;
         }
 
-        private void DataGridView3_RowsChanged(object sender, DataGridViewRowsRemovedEventArgs e)
+        public void UpdateTotalPrice()
         {
-            UpdateTotalPrice();
-        }
-
-        private void UpdateTotalPrice()
-        {
+            totalPrice = 0;
             foreach (DataGridViewRow row in dataGridView3.Rows)
             {
                 if (row.Cells[2].Value != null)
                 {
                     totalPrice += Convert.ToDecimal(row.Cells[2].Value);
                 }
-                textBox2.Text = totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
             }
+            textBox2.Text = totalPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
         }
 
         private void button11_Click(object sender, EventArgs e)
-        { 
+        {
             login.Show();
             Close();
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
-           login.Show();
+            login.Show();
         }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                dataGridView3.Rows.RemoveAt(e.RowIndex);
+                UpdateTotalPrice();
+            }
+        }
+
     }
 }

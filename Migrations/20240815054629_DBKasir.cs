@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Kasir.Migrations
 {
     /// <inheritdoc />
-    public partial class yardo : Migration
+    public partial class DBKasir : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -68,7 +68,7 @@ namespace Kasir.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     SaleDate = table.Column<DateTime>(type: "date", nullable: false),
                     TotalPrice = table.Column<decimal>(type: "numeric(10,2)", nullable: false),
-                    CostumerId = table.Column<int>(type: "integer", nullable: false)
+                    CostumerId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -77,8 +77,7 @@ namespace Kasir.Migrations
                         name: "FK_Sales_Costumers_CostumerId",
                         column: x => x.CostumerId,
                         principalTable: "Costumers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

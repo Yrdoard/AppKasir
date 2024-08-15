@@ -104,3 +104,4 @@ C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.EditProduct
 C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.ProductAdd.resources
 C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.AddUser.resources
 C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.EditUser.resources
+C:\Users\USER\source\repos\Kasir\obj\Debug\net8.0-windows\Kasir.Page.ReceiptForm.resources

@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kasir.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Kasir.Page
 {
@@ -20,11 +22,6 @@ namespace Kasir.Page
             homeForm = home;
         }
 
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddBtn_Click_1(object sender, EventArgs e)
         {
             Product product = new Product
@@ -34,15 +31,24 @@ namespace Kasir.Page
                 Stock = Convert.ToInt32(TbStock.Text)
             };
 
-            DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if (string.IsNullOrEmpty(TbName.Text) || string.IsNullOrEmpty(TbPrice.Text) || string.IsNullOrEmpty(TbStock.Text))
             {
-                Program.db.Products.Add(product);
-                Program.db.SaveChanges();
-                homeForm.RDataProduct();
-                this.Close();
+                MessageBox.Show("Please enter valid user details.");
+                return;
             }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    Program.db.Products.Add(product);
+                    Program.db.SaveChanges();
+                    homeForm.RDataProduct();
+                    this.Close();
+                }
+            }
+
         }
         private void Tb_KeyPress(object sender, KeyPressEventArgs e)
         {

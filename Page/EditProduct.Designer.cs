@@ -56,6 +56,7 @@
             TbPrice.PlaceholderText = "Price";
             TbPrice.Size = new Size(361, 34);
             TbPrice.TabIndex = 7;
+            TbPrice.KeyPress += Tb_KeyPress;
             // 
             // TbStock
             // 
@@ -66,6 +67,7 @@
             TbStock.PlaceholderText = "Stock";
             TbStock.Size = new Size(361, 34);
             TbStock.TabIndex = 6;
+            TbStock.KeyPress += Tb_KeyPress;
             // 
             // TbName
             // 

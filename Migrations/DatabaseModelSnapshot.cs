@@ -78,7 +78,7 @@ namespace Kasir.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CostumerId")
+                    b.Property<int?>("CostumerId")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("SaleDate")
@@ -169,9 +169,7 @@ namespace Kasir.Migrations
                 {
                     b.HasOne("Kasir.Models.Costumer", "Costumer")
                         .WithMany()
-                        .HasForeignKey("CostumerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CostumerId");
 
                     b.Navigation("Costumer");
                 });

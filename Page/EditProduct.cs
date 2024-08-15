@@ -37,13 +37,28 @@ namespace Kasir.Page
             product.Price = Convert.ToInt32(TbPrice.Text);
             product.Stock = Convert.ToInt32(TbStock.Text);
 
-            DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if(string.IsNullOrEmpty(TbName.Text) || string.IsNullOrEmpty(TbPrice.Text) || string.IsNullOrEmpty(TbStock.Text))
             {
-                Program.db.SaveChanges();
-                homeForm.RDataProduct();
-                this.Close();
+                MessageBox.Show("Please enter valid product details.");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    Program.db.SaveChanges();
+                    homeForm.RDataProduct();
+                    this.Close();
+                }
+            }
+        }
+
+        private void Tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

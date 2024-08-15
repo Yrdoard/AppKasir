@@ -3,48 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\Kasir\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\receiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\receiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\productadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\productadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\receiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\receiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|C:\\Users\\USER\\source\\repos\\Kasir\\page\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|C:\\Users\\USER\\source\\repos\\Kasir\\page\\edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\productadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\productadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\migrations\\20240801023243_yardo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:migrations\\20240801023243_yardo.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|c:\\users\\user\\source\\repos\\kasir\\page\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00B8A051-B72B-487E-ACE1-D8A77861221B}|Kasir.csproj|solutionrelative:page\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,147 +38,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddUser.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\AddUser.cs",
-              "RelativeDocumentMoniker": "Page\\AddUser.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\AddUser.cs [Design]",
-              "RelativeToolTip": "Page\\AddUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T01:25:33.153Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EditUser.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\EditUser.cs",
-              "RelativeDocumentMoniker": "Page\\EditUser.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\EditUser.cs [Design]",
-              "RelativeToolTip": "Page\\EditUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T06:25:51.64Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Home.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\Home.cs",
+              "RelativeDocumentMoniker": "Page\\Home.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\Home.cs",
+              "RelativeToolTip": "Page\\Home.cs",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAlwNkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T07:31:50.521Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReceiptForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\ReceiptForm.cs",
+              "RelativeDocumentMoniker": "Page\\ReceiptForm.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\ReceiptForm.cs [Design]",
+              "RelativeToolTip": "Page\\ReceiptForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T07:31:17.896Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReceiptForm.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\ReceiptForm.cs",
+              "RelativeDocumentMoniker": "Page\\ReceiptForm.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\ReceiptForm.cs",
+              "RelativeToolTip": "Page\\ReceiptForm.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAmwC0AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T06:47:26.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Home.cs [Design]",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\Home.cs",
               "RelativeDocumentMoniker": "Page\\Home.cs",
               "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\Home.cs [Design]",
               "RelativeToolTip": "Page\\Home.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T02:49:46.601Z",
+              "WhenOpened": "2024-08-15T03:00:37.948Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Database.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Database.cs",
-              "RelativeDocumentMoniker": "Database.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Database.cs",
-              "RelativeToolTip": "Database.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "EditUser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\EditUser.cs",
+              "RelativeDocumentMoniker": "Page\\EditUser.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\EditUser.cs [Design]",
+              "RelativeToolTip": "Page\\EditUser.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:42:52.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Home.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\Home.cs",
-              "RelativeDocumentMoniker": "Page\\Home.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\Home.cs",
-              "RelativeToolTip": "Page\\Home.cs",
-              "ViewState": "AQIAAN4AAAAAAAAAAAA6wOcAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:22:38.948Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductAdd.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\ProductAdd.cs",
-              "RelativeDocumentMoniker": "Page\\ProductAdd.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\ProductAdd.cs [Design]",
-              "RelativeToolTip": "Page\\ProductAdd.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:22:29.453Z",
+              "WhenOpened": "2024-08-15T07:00:59.469Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Login.cs",
-              "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Login.cs",
-              "RelativeToolTip": "Login.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:38:24.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductAdd.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\ProductAdd.cs",
-              "RelativeDocumentMoniker": "Page\\ProductAdd.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\ProductAdd.cs",
-              "RelativeToolTip": "Page\\ProductAdd.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwEAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:22:33.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Login.cs",
-              "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Login.cs [Design]",
-              "RelativeToolTip": "Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:38:22.388Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "20240801023243_yardo.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Migrations\\20240801023243_yardo.Designer.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240801023243_yardo.Designer.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Migrations\\20240801023243_yardo.Designer.cs",
-              "RelativeToolTip": "Migrations\\20240801023243_yardo.Designer.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAQwA8AAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:32:59.245Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AddProduct.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\AddProduct.cs",
-              "RelativeDocumentMoniker": "Page\\AddProduct.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\Kasir\\Page\\AddProduct.cs",
-              "RelativeToolTip": "Page\\AddProduct.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAuwDUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T02:44:25.733Z",
-              "EditorCaption": ""
             }
           ]
         }
